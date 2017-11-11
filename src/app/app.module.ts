@@ -4,6 +4,8 @@ import { MyApp } from './app.component';
 import { Signup } from '../pages/signup/signup';
 import { Login } from '../pages/login/login';
 import { Home } from '../pages/home/home';
+import { Tabs } from '../pages/tabs/tabs';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
@@ -22,7 +24,8 @@ export const firebaseConfig = {
     MyApp,
     Signup,
     Home,
-    Login
+    Login,
+    Tabs
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -33,7 +36,8 @@ export const firebaseConfig = {
     MyApp,
     Signup,
     Home,
-    Login
+    Login,
+    Tabs
   ],
   providers: [
     StatusBar,

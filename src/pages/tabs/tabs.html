@@ -1,0 +1,11 @@
+<ion-tabs color="background">
+    <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+    <div >
+    <ion-tab [root]="tab2Root" tabTitle="My Splits" tabIcon="md-car" [tabBadge]="totalnotif>0 ? totalnotif : null" tabBadgeStyle="danger"></ion-tab>
+    </div>
+  
+    <ion-tab [root]="tab3Root" tabTitle="Create" tabIcon="add-circle"></ion-tab>    
+    <ion-tab [root]="tab4Root" tabTitle="Profile" tabIcon="ios-person"></ion-tab>
+    <ion-tab (ionSelect)="open()" tabTitle="Other" tabIcon="ios-information-circle-outline"></ion-tab>
+    
+  </ion-tabs>

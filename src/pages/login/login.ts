@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, ToastController, LoadingController } from 'ionic-angular';
 import { Signup } from '../signup/signup';
-import { Home } from '../home/home';
+import { Tabs } from '../tabs/tabs';
 
 
 import { AuthService } from '../../providers/auth-service';
@@ -20,7 +20,9 @@ export class Login {
 
 
   constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, private af: AngularFire, private _auth: AuthService, public toastCtrl: ToastController) {
-
+    if(_auth.authenticated) {
+      navCtrl.setRoot(Tabs);
+  }
   }
 
   ionViewDidEnter() {
@@ -43,7 +45,7 @@ export class Login {
 
         let usern: any = firebase.auth().currentUser;
 
-        this.navCtrl.setRoot(Home);
+        this.navCtrl.setRoot(Tabs);
 
         loading.dismiss();
       }).catch((error) => {
