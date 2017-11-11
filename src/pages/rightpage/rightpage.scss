@@ -37,6 +37,7 @@ page-rightpage {
 	    cursor: pointer;
 	    width: 100%;
 	    font-size: 18px;
+	    border-radius: 50%;
 	}
 
 	a {
@@ -49,13 +50,16 @@ page-rightpage {
 	    opacity: 0.7;
 	}
 
+
+
 	#btn-group button {
-    background-color: #4CAF50; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
+	    background-color: #4CAF50; /* Green background */
+	    border: 1px solid green; /* Green border */
+	    color: white; /* White text */
+	    padding: 10px 24px; /* Some padding */
+	    cursor: pointer; /* Pointer/hand icon */
+	    float: left; /* Float the buttons side by side */
+	    border-radius: 50%;
 	}
 
 	#btn-group button:not(:last-child) {
@@ -72,6 +76,15 @@ page-rightpage {
 	/* Add a background color on hover */
 	#btn-group button:hover {
 	    background-color: #3e8e41;
+	}
+
+	#div {
+		padding: 25px 0px 25px 0px;
+		border-width: 2px;
+	    border-bottom-width:2px;
+	    border-bottom-color:Black;
+	    border-bottom-style: solid;
+	    width: 100%;
 	}
 
 }
