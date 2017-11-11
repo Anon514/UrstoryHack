@@ -17,22 +17,45 @@
 
 <ion-content (swipe)="swipeEvent($event)">
 
-    <link rel="rightpage.scss" href="https://github.com/Anon514/UrstoryHack/blob/master/src/pages/rightpage/rightpage.scss">
+       <link rel="rightpage.scss" href="https://github.com/Anon514/UrstoryHack/blob/master/src/pages/rightpage/rightpage.scss">
 
-        <div id="card">
-          <img id="profile-pic" src="img/safa-profile.jpg" alt="Safa">
+        <div class="card">
+          <img class="profile-pic" src="/UrstoryHack/www/img/safa-profile.png" alt="Safa" style="width:100%">
           <h1>Safa Tinaztepe</h1>
-          <p id="title" style="text-align:center"> 11,852 Ripples</p>
-          <p style="text-align:center">Home: Emory University</p>
-
+          <p class="title" style="text-align:left">Ripple Score: </p>
+          <p style="text-align:left">Emory University</p>
+          
           <p><button>See Favorite Places</button></p>
         </div>
 
-        <div id="btn-group">
+        <div class="btn-group">
           <button>Timeline</button>
           <button>View Map</button>
           <button>Top Ripples</button>
         </div>
+
+
+        <div>
+        <p style="text-align:left">Place Suggestions: </p>
+          <button class="button">Place1</button>
+          <button class="button">Place2</button>
+          <button class="button">Place3</button>
+          <button class="button">Place4</button>
+        </div>
+
+        <div>
+          <p style="text-align:left">Friend Suggestions: </p>
+          <button class="button">Friend1</button>
+          <button class="button">Friend2</button>
+          <button class="button">Friend3</button>
+          <button class="button">Friend4</button>
+        </div>
+
+        <div>
+          <p style="text-align:left">Event Suggestions: </p>
+          <button class="button">Event1</button>
+        </div>
+
 
 
 
