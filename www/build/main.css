@@ -26884,6 +26884,7 @@ page-rightpage #btn-group button {
   /* Pointer/hand icon */
   float: left;
   /* Float the buttons side by side */
+  border-radius: 5px;
 }
 
 page-rightpage #btn-group button:not(:last-child) {
@@ -26901,10 +26902,11 @@ page-rightpage #btn-group button:hover {
   background-color: #3e8e41;
 }
 
-page-rightpage #logoutButton {
-  border-radius: 10px;
-  margin: auto;
-  width: 50%;
-  display: block;
-  padding: 10px;
+page-rightpage #div {
+  padding: 25px 0px 25px 0px;
+  border-width: 2px;
+  border-bottom-width: 2px;
+  border-bottom-color: Black;
+  border-bottom-style: solid;
+  width: 100%;
 }

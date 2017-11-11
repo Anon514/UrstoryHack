@@ -37,7 +37,6 @@ page-rightpage {
 	    cursor: pointer;
 	    width: 100%;
 	    font-size: 18px;
-	    border-radius: 50%;
 	}
 
 	a {
@@ -59,7 +58,7 @@ page-rightpage {
 	    padding: 10px 24px; /* Some padding */
 	    cursor: pointer; /* Pointer/hand icon */
 	    float: left; /* Float the buttons side by side */
-	    border-radius: 50%;
+	    border-radius: 5px;
 	}
 
 	#btn-group button:not(:last-child) {
