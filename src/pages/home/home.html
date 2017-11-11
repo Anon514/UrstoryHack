@@ -1,15 +1,14 @@
 <ion-header >
   <ion-navbar color="primary" enable-menu-with-back-views="false">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-    <ion-buttons end>
- 
-    </ion-buttons>
+      <ion-searchbar style="background-color: #acc6f3"></ion-searchbar>
+      
   </ion-navbar>
+  
 </ion-header>
 
-<ion-content >
-    </ion-content>
+
+<ion-content>
+  <canvas (swipe)="swipeEvent($event)" style="background: light-blue; height: 100%; width: 100%"></canvas>
+
+</ion-content>
 

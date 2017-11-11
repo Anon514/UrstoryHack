@@ -5,6 +5,8 @@ import { Signup } from '../pages/signup/signup';
 import { Login } from '../pages/login/login';
 import { Home } from '../pages/home/home';
 import { Tabs } from '../pages/tabs/tabs';
+import { LeftPage } from '../pages/leftpage/leftpage';
+import { RightPage } from '../pages/rightpage/rightpage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +27,9 @@ export const firebaseConfig = {
     Signup,
     Home,
     Login,
-    Tabs
+    Tabs,
+    LeftPage,
+    RightPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -37,7 +41,9 @@ export const firebaseConfig = {
     Signup,
     Home,
     Login,
-    Tabs
+    Tabs,
+    LeftPage,
+    RightPage
   ],
   providers: [
     StatusBar,
