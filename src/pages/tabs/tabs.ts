@@ -17,16 +17,14 @@ export class Tabs {
   tab1Root = Home;
   tab2Root = Home;
   tab3Root = Home;
-  tab4Root = Home;
   user: any;
 
-  
+
   constructor( public navCtrl: NavController, private af: AngularFire, private _auth: AuthService, public actionSheetCtrl: ActionSheetController) {
 
   }
 
   ngOnInit(){
     this.user = this.af.database.object('/users/' + this._auth.getEmailName());
-
   }
 }

@@ -26809,3 +26809,9 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+page-home #map_canvas {
+  height: 80%;
+  width: 80%;
+  border: 5px;
+}

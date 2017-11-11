@@ -7,6 +7,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { ViewController } from 'ionic-angular';
 
 import * as firebase from 'firebase';
+import { Home } from '../home/home';
+
 
 
 @Component({
@@ -16,11 +18,12 @@ import * as firebase from 'firebase';
 export class RightPage {
     swipe: number=0;
     constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire, public viewCtrl: ViewController) {
-       
     }
 
-    dismiss() {
-        this.viewCtrl.dismiss();
+    swipeEvent(e) {
+      if(e.direction == 4){
+        this.navCtrl.push(Home, {}, {animate: true, direction: 'back'});
+      }
     }
 
 }
