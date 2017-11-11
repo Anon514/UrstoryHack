@@ -1,7 +1,7 @@
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { AuthService } from '../../providers/auth-service';
 
-export class User {
+export class Comment {
     first: string;
     email: string;
     last: string;

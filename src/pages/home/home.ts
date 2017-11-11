@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
-import { MenuController, NavController } from 'ionic-angular';
+import { MenuController, NavController, ModalController} from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
 import { Login } from '../login/login';
 import { LeftPage } from '../leftpage/leftpage';
 import { RightPage } from '../rightpage/rightpage';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { LoadingController } from 'ionic-angular';
+import { Post } from '../post/post'
 
 import * as firebase from 'firebase';
 
@@ -21,8 +22,7 @@ export class Home {
     map: any;
     loader: any;
 
-    constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire, public loadCtrl: LoadingController) {
-
+    constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire, public loadCtrl: LoadingController, public modalCtrl: ModalController) {
     }
 
     // Navigation
@@ -48,6 +48,19 @@ export class Home {
 
         loader.dismiss();
       }
+
+      postStatus(){
+        let modal = this.modalCtrl.create(Post, { type: "status" });
+        modal.present();
+      }
+      postPicture(){
+        let modal = this.modalCtrl.create(Post, { type: "pic" });
+        modal.present();
+     }
+      postEmoji(){
+        let modal = this.modalCtrl.create(Post, { type: "emoji" });
+        modal.present();
+     }
 
 
       initializeMap() {

@@ -15,9 +15,9 @@
 
       <ion-fab-list side="top">
          <!--<button ion-fab (click)="post('status', text)">Facebook</button>-->
-         <input ion-fab type=image src="https://image.flaticon.com/icons/svg/69/69455.svg"  >
-         <input ion-fab type=image src="https://image.flaticon.com/icons/svg/149/149092.svg">
-         <input ion-fab type=image src="https://image.flaticon.com/icons/svg/158/158409.svg">
+         <button (click)="postStatus()" ion-fab >  <ion-icon name="create"></ion-icon></button>
+         <button (click)="postPicture()" ion-fab>  <ion-icon name="ios-image"></ion-icon></button>
+         <button (click)="postEmoji()" ion-fab> <ion-icon name="ios-happy"></ion-icon></button>
       </ion-fab-list>
 
     </ion-fab>
