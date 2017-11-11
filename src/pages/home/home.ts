@@ -6,6 +6,7 @@ import { Login } from '../login/login';
 import { LeftPage } from '../leftpage/leftpage';
 import { RightPage } from '../rightpage/rightpage';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { LoadingController } from 'ionic-angular';
 
 import * as firebase from 'firebase';
 
@@ -17,21 +18,12 @@ declare var google : any;
 })
 export class Home {
     swipe: number=0;
-    constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire) {
+    map: any;
+    loader: any;
+
+    constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire, public loadCtrl: LoadingController) {
 
     }
-
-
-    /*
-    ionViewDidLoad() {
-      this.curr_user = {name : this._auth.getEmailName(), email : this._auth.email};
-      console.log(this._auth.getEmailName());
-
-      // user information is stored under this._auth
-
-
-    }
-    */
 
     // Navigation
     swipeEvent(e) {
@@ -45,13 +37,20 @@ export class Home {
         }
       }
 
-      ionViewDidLoad() {
-        this.map = null;
-        this.initializeMap();
+      ngOnInit() {
+        let loader = this.loadCtrl.create({
+            content: 'Poop',
+        });
+
+        loader.present().then(
+          () => { this.initializeMap(); }
+        );
+
+        //loader.dismiss();
       }
 
-      initializeMap() {
 
+      initializeMap() {
           let locationOptions = {timeout: 20000, enableHighAccuracy: true};
 
           navigator.geolocation.getCurrentPosition(
@@ -72,6 +71,10 @@ export class Home {
               (error) => {
                   console.log(error);
               }, locationOptions
+
+
           );
+
+
       }
 }
