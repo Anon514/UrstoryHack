@@ -1,17 +1,27 @@
-<ion-content drag-content="false"  padding>
-  <div center text-center>
-   <ion-item no-padding >
-            <ion-label floating><strong>Email: </strong></ion-label>
-            <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+<ion-content style="background: url('img/giphy.gif'); opacity: 0.3; filter: grayscale(80%);" loop=infinite drag-content="false"
+    padding>
+    <br>
+    <br>
+    <br>
+    <div text-center>
+        <img text-center style="width: 70%; " src="img/IMG_0079.jpeg">
+    </div>
+    <div style=" filter: grayscale(0%);"center text-center>
+        <ion-item  no-padding>
+            <!-- <ion-label floating><strong>Email: </strong></ion-label> -->
+            <ion-input placeholder="Email" type="text" [(ngModel)]="email" name="email"></ion-input>
         </ion-item>
-        <ion-item no-padding >
-            <ion-label floating ><strong>Password: </strong></ion-label>
-            <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+        <ion-item  no-padding>
+            <!-- <ion-label floating ><strong>Password: </strong></ion-label> -->
+            <ion-input placeholder="Password" type="password" [(ngModel)]="password" name="password"></ion-input>
         </ion-item>
         <br>
         <br>
         <button ion-button type="submit" block (click)="loginForm()">Log in</button>
-        <button ion-button type="submit" block (click)="goToRegister()">Sign Up</button>
-        
-</div>
+        <a type="submit" block (click)="goToRegister()">Or create an account</a>
+
+    </div>
+    <br>
+        <p text-center style="color: white">"The future belongs to those who believe in the beauty of their dreams."</p>
+        <p style="color: white; text-align: right;">-Eleanor Roosevelt</p>
 </ion-content>

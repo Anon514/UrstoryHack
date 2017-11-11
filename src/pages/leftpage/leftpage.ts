@@ -21,7 +21,7 @@ export class LeftPage {
     }
 
     dismiss() {
-        this.viewCtrl.dismiss();
+        this.viewCtrl.dismiss( {}, {animate: true, direction: 'forward'});
     }
 
 }

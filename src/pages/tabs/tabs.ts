@@ -29,4 +29,8 @@ export class Tabs {
     this.user = this.af.database.object('/users/' + this._auth.getEmailName());
 
   }
+  logout(){
+    this._auth.signOut();
+    this.navCtrl.setRoot(Login);
+  }
 }
