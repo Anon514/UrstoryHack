@@ -26816,6 +26816,91 @@ page-home #map {
   border: 5px;
 }
 
+page-rightpage {
+  /* Clear floats (clearfix hack) */
+  /* Add a background color on hover */
+}
+
+page-rightpage #logoutButton {
+  border-radius: 10px;
+  margin: auto;
+  width: 50%;
+  display: block;
+  padding: 10px;
+}
+
+page-rightpage #profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px black;
+}
+
+page-rightpage #card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+page-rightpage #title {
+  color: grey;
+  font-size: 18px;
+}
+
+page-rightpage button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+page-rightpage a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+page-rightpage button:hover, page-rightpage a:hover {
+  opacity: 0.7;
+}
+
+page-rightpage #btn-group button {
+  background-color: #4CAF50;
+  /* Green background */
+  border: 1px solid green;
+  /* Green border */
+  color: white;
+  /* White text */
+  padding: 10px 24px;
+  /* Some padding */
+  cursor: pointer;
+  /* Pointer/hand icon */
+  float: left;
+  /* Float the buttons side by side */
+}
+
+page-rightpage #btn-group button:not(:last-child) {
+  border-right: none;
+  /* Prevent double borders */
+}
+
+page-rightpage #btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+page-rightpage #btn-group button:hover {
+  background-color: #3e8e41;
+}
+
 page-rightpage #logoutButton {
   border-radius: 10px;
   margin: auto;

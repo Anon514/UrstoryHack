@@ -67,14 +67,9 @@ export class Home {
                   this.map = new google.maps.Map(document.getElementById("map"), options);
                   //this.marker = new google.maps.Marker(position, map);
               },
-
               (error) => {
                   console.log(error);
               }, locationOptions
-
-
           );
-
-
       }
 }

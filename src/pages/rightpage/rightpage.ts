@@ -9,6 +9,7 @@ import { ViewController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { Home } from '../home/home';
 
+declare var google : any;
 
 
 @Component({
@@ -21,6 +22,8 @@ export class RightPage {
     email: any;
     first: any;
     last: any;
+    map: any;
+    marker: any;
 
     constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire, public viewCtrl: ViewController) {
     }
@@ -45,6 +48,30 @@ export class RightPage {
                    this.last  = data.last;
                   }
       )
+    }
+
+    initializeMap() {
+        let locationOptions = {timeout: 20000, enableHighAccuracy: true};
+
+        navigator.geolocation.getCurrentPosition(
+
+            (position) => {
+
+                let options = {
+                  center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                  zoom: 16,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP,
+                  disableDefaultUI: true
+                }
+
+                this.map = new google.maps.Map(document.getElementById("map"), options);
+                this.marker = new google.maps.Marker(position, this.map);
+            },
+
+            (error) => {
+                console.log(error);
+            }, locationOptions
+        );
     }
 
 
