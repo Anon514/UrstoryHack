@@ -18,4 +18,16 @@
 <ion-content (swipe)="swipeEvent($event)">
 
 
+  <ion-buttons start>
+
+    <p> {{email}} </p>
+
+
+    <button id="logoutButton" ion-button (click)="logout()">
+      Logout
+    </button>
+
+  </ion-buttons>
+
+
 </ion-content>

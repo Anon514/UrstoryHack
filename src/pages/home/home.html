@@ -8,4 +8,19 @@
 
 <ion-content (swipe)="swipeEvent($event)">
     <div id="map" style="width:400px; height:400px"></div>
+
+    <ion-fab center bottom>
+
+      <input ion-fab type=image style="height:50px; width:50px;" src="https://image.flaticon.com/icons/svg/181/181544.svg" onclick="console.log('but');">
+
+      <ion-fab-list side="top">
+         <!--<button ion-fab (click)="post('status', text)">Facebook</button>-->
+         <input ion-fab type=image src="https://image.flaticon.com/icons/svg/69/69455.svg"  >
+         <input ion-fab type=image src="https://image.flaticon.com/icons/svg/149/149092.svg">
+         <input ion-fab type=image src="https://image.flaticon.com/icons/svg/158/158409.svg">
+      </ion-fab-list>
+
+    </ion-fab>
+
+
 </ion-content>

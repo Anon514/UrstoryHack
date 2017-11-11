@@ -25,6 +25,6 @@ export class Tabs {
   }
 
   ngOnInit(){
-    this.user = this.af.database.object('/users/' + this._auth.getEmailName());
+
   }
 }

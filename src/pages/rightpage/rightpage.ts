@@ -17,6 +17,11 @@ import { Home } from '../home/home';
 })
 export class RightPage {
     swipe: number=0;
+    user: any;
+    email: any;
+    first: any;
+    last: any;
+
     constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire, public viewCtrl: ViewController) {
     }
 
@@ -25,5 +30,22 @@ export class RightPage {
         this.navCtrl.push(Home, {}, {animate: true, direction: 'back'});
       }
     }
+
+    logout() {
+      this._auth.signOut();
+      this.navCtrl.setRoot(Login);
+    }
+
+    ngOnInit() {
+      this.user = this.af.database.object('/users/' + this._auth.getEmailName());
+      let userData = this.user.subscribe(
+        (data) => {
+                   this.email = data.email;
+                   this.first = data.first;
+                   this.last  = data.last;
+                  }
+      )
+    }
+
 
 }

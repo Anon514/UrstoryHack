@@ -46,7 +46,7 @@ export class Home {
           () => { this.initializeMap(); }
         );
 
-        //loader.dismiss();
+        loader.dismiss();
       }
 
 
