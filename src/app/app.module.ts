@@ -14,6 +14,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../providers/auth-service';
 
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
+
 export const firebaseConfig = {
     apiKey: "AIzaSyDQdcFOv5-WDn_GUn-4CxvjWzWW5JbIDu8",
     authDomain: "urstory-7f855.firebaseapp.com",
@@ -52,7 +56,13 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    FileTransfer,
+    FileTransferObject,
+    File,
+    Camera
+
+
   ]
 })
 export class AppModule {}
