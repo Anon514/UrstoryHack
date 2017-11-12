@@ -7,6 +7,9 @@ import { LeftPage } from '../leftpage/leftpage';
 import { RightPage } from '../rightpage/rightpage';
 import {Posts} from '../../app/models/post'
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { LoadingController, ToastController } from 'ionic-angular';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import * as firebase from 'firebase';
 declare var google : any;
@@ -22,8 +25,10 @@ export class Post {
     map: any;
     locations: any;
     userinput: any;
+    imageURI:any;
+    imageFileName:any;
 
-    constructor(params: NavParams, private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire,  public viewCtrl: ViewController,  private alertCtrl: AlertController) {
+    constructor(params: NavParams, private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire,  public viewCtrl: ViewController,  private alertCtrl: AlertController, private transfer: FileTransfer, private camera: Camera, public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
         console.log('type:', params.get('type'));
         this.type=params.get('type');
     }
@@ -49,6 +54,61 @@ export class Post {
         
 
     }
+
+    getImage() {
+        const options: CameraOptions = {
+          quality: 100,
+          destinationType: this.camera.DestinationType.FILE_URI,
+          sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+        }
+      
+        this.camera.getPicture(options).then((imageData) => {
+          this.imageURI = imageData;
+        }, (err) => {
+          console.log(err);
+          this.presentToast(err);
+        });
+      }
+      uploadFile() {
+        let loader = this.loadingCtrl.create({
+          content: "Uploading..."
+        });
+        loader.present();
+        const fileTransfer: FileTransferObject = this.transfer.create();
+      
+        let options: FileUploadOptions = {
+          fileKey: 'ionicfile',
+          fileName: 'ionicfile',
+          chunkedMode: false,
+          mimeType: "image/jpeg",
+          headers: {}
+        }
+      
+        fileTransfer.upload(this.imageURI, 'http://192.168.0.7:8080/api/uploadImage', options)
+          .then((data) => {
+          console.log(data+" Uploaded Successfully");
+          this.imageFileName = "http://192.168.0.7:8080/static/images/ionicfile.jpg"
+          loader.dismiss();
+          this.presentToast("Image uploaded successfully");
+        }, (err) => {
+          console.log(err);
+          loader.dismiss();
+          this.presentToast(err);
+        });
+      }
+      presentToast(msg) {
+        let toast = this.toastCtrl.create({
+          message: msg,
+          duration: 3000,
+          position: 'bottom'
+        });
+      
+        toast.onDidDismiss(() => {
+          console.log('Dismissed toast');
+        });
+      
+        toast.present();
+      }
 
     blankinput(){
         let alert = this.alertCtrl.create({

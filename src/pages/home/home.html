@@ -9,11 +9,11 @@
 <ion-content (swipe)="swipeEvent($event)">
     <div id="map"></div>
 
-    <ion-fab center bottom>
+    <ion-fab left bottom>
 
-      <input ion-fab type=image style="height:50px; width:50px;" src="https://image.flaticon.com/icons/svg/181/181544.svg" onclick="console.log('but');">
+      <input ion-fab type=image style="height:50px; width:50px;" src="https://image.flaticon.com/icons/svg/181/181544.svg">
 
-      <ion-fab-list side="top">
+      <ion-fab-list side="right">
          <!--<button ion-fab (click)="post('status', text)">Facebook</button>-->
          <button (click)="postStatus()" ion-fab >  <ion-icon name="create"></ion-icon></button>
          <button (click)="postPicture()" ion-fab>  <ion-icon name="ios-image"></ion-icon></button>
