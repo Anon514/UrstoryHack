@@ -1,14 +1,26 @@
 <ion-header >
   <ion-navbar color="primary" enable-menu-with-back-views="false">
       <ion-searchbar style="background-color: #acc6f3"></ion-searchbar>
-      
   </ion-navbar>
-  
+
 </ion-header>
 
 
-<ion-content>
-  <canvas (swipe)="swipeEvent($event)" style="background: light-blue; height: 100%; width: 100%"></canvas>
+<ion-content (swipe)="swipeEvent($event)">
+    <div id="map"></div>
+
+    <ion-fab center bottom>
+
+      <input ion-fab type=image style="height:50px; width:50px;" src="https://image.flaticon.com/icons/svg/181/181544.svg" onclick="console.log('but');">
+
+      <ion-fab-list side="top">
+         <!--<button ion-fab (click)="post('status', text)">Facebook</button>-->
+         <button (click)="postStatus()" ion-fab >  <ion-icon name="create"></ion-icon></button>
+         <button (click)="postPicture()" ion-fab>  <ion-icon name="ios-image"></ion-icon></button>
+         <button (click)="postEmoji()" ion-fab> <ion-icon name="ios-happy"></ion-icon></button>
+      </ion-fab-list>
+
+    </ion-fab>
+
 
 </ion-content>
-

@@ -7,7 +7,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { ViewController } from 'ionic-angular';
 
 import * as firebase from 'firebase';
-
+import { Home } from '../home/home';
 
 @Component({
     selector: 'page-leftpage',
@@ -16,12 +16,12 @@ import * as firebase from 'firebase';
 export class LeftPage {
     swipe: number=0;
     constructor(private menu: MenuController, public navCtrl: NavController, private _auth: AuthService, public af: AngularFire, public viewCtrl: ViewController) {
-       
-
     }
 
-    dismiss() {
-        this.viewCtrl.dismiss( {}, {animate: true, direction: 'forward'});
-    }
 
+    swipeEvent(e) {
+      if(e.direction == 2){
+        this.navCtrl.push(Home, {}, {animate: true, direction: 'forward'});
+      }
+    }
 }

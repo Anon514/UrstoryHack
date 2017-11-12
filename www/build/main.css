@@ -26809,3 +26809,103 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+page-home #map {
+  height: 100%;
+  width: 100%;
+  border: 5px;
+}
+
+page-rightpage {
+  /* Clear floats (clearfix hack) */
+  /* Add a background color on hover */
+}
+
+page-rightpage #logoutButton {
+  border-radius: 10px;
+  margin: auto;
+  width: 50%;
+  display: block;
+  padding: 10px;
+}
+
+page-rightpage #profile-pic {
+  border-radius: 50%;
+}
+
+page-rightpage #card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+page-rightpage #title {
+  color: grey;
+  font-size: 18px;
+}
+
+page-rightpage button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  height: 50px;
+  width: 50px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+page-rightpage a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+page-rightpage button:hover, page-rightpage a:hover {
+  opacity: 0.7;
+}
+
+page-rightpage #btn-group button {
+  background-color: #4CAF50;
+  /* Green background */
+  border: 1px solid green;
+  /* Green border */
+  color: white;
+  /* White text */
+  padding: 10px 24px;
+  /* Some padding */
+  cursor: pointer;
+  /* Pointer/hand icon */
+  float: left;
+  /* Float the buttons side by side */
+  border-radius: 50%;
+}
+
+page-rightpage #btn-group button:not(:last-child) {
+  border-right: none;
+  /* Prevent double borders */
+}
+
+page-rightpage #btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+page-rightpage #btn-group button:hover {
+  background-color: #3e8e41;
+}
+
+page-rightpage #div {
+  padding: 25px 0px 25px 0px;
+  border-width: 2px;
+  border-bottom-width: 2px;
+  border-bottom-color: Black;
+  border-bottom-style: solid;
+  width: 100%;
+}
